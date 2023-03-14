@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro de clientes</title>
+    <style>
+        body
+        {
+            width: 1100px;
+            height: 800px;
+            background-color:slategrey;
+        }
+        .texto
+        {
+            width: 90%;
+            height: 300px;
+            font-size: 25px;
+            color: red;
+            resize: none;
+        }
+        .caixa_larga
+        {
+            width: 600px;
+            font-size: 18px;
+            box-shadow: 1px 1px black;
+        }
+        .botoes
+        {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+        }
+        .botao:hover
+        {
+            background-color: green;
+            color: white;
+        }
+        .botao
+        {
+            margin-left: 20px; /* AFATEI OS BOTÕES*/
+            width: 80PX;
+            height: 30PX;
+            background-color: rgb(238, 45, 45);
+            font-size: 18PX;
+        }
+        .logo
+        {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            animation: vai_vai 5s alternate infinite;
+        }
+        @keyframes vai_vai
+        {
+            0%{ margin-left:0px;}
+            100%{margin-left: 95%;rotate:360deg;background-color: yellow;}
+        }
+    </style>
+</head>
+<body>
+    <div class="logo"></div>
+
+    <!-- VAMOS CRIAR NOSSO PRIMEIRO FORMULÁRIO-->
+    <fieldset>
+        <legend>Dados Pessoais</legend>
+        Nome:<input type="text" class="caixa_larga" id="nome"
+        <br> <br> <br>
+        Endereço:<input type="text" class="caixa_larga" id="endereco"
+        <br> <br> <br>
+        Cidade:<input type="text" class="caixa_larga" id="cidade"
+        <br> <br> <br>
+        Estado:<select id="estado" class="estado">
+            <option>Alagoas</option>
+            <option>Bahia</option>
+            <option selected>Santa Catarina</option>
+            </select>
+    </fieldset>
+    <fieldset>
+        <legend>Dados Profissionais</legend>
+        Natureza do cargo:
+        <br>
+        <input type="radio" class="cargos" id="gerencia" name="cargos">Gerência
+        <input type="radio" class="cargos" id="financeiro" name="cargos">Financeiro
+        <input type="radio" class="cargos" id="recepcao" name="cargos">Recepção
+        <input type="radio" class="cargos" id="administrativo" name="cargos">administrativo
+        <input type="radio" class="cargos" id="juridico" name="cargos">Jurídico
+
+        <br>  <br>
+        Área de interesse:
+        <br>
+        <input type="checkbox" class="areas" id="computacao">Computação
+        <input type="checkbox" class="areas" id="biologia">Biologia
+        <input type="checkbox" class="areas" id="meio_ambiente">Meio Ambiente
+        <input type="checkbox" class="areas" id="engenharia">Engenharia
+        <input type="checkbox" class="areas" id="historia">História
+        <br> <br>
+        Mini-Currículo:
+        (veja
+        <a href="https://www.vagas.com.br/profissoes/como-fazer-curriculo-dicas/" target="_blank">
+         dicas 
+        </a>
+        de como fazer seu currículo)
+
+        <br>
+        <textarea class="texto" id="curriculo"> </textarea>
+
+
+
+    </fieldset>
+    <div class="botoes">
+    <button class="botao">Enviar</button>
+    <button onclick="LimpaTudo();" class="botao">Limpar</button>
+    </div>
+</body>
+    <script>
+        function LimpaTudo()
+        {
+            nome.value ="";
+            endereco.value ="";
+            cidade.value ="";
+            estado.value ="";
+            gerencia.checked =false;
+            financeiro.checked =false;
+            recepcao.checked =false;
+            administrativo.checked =false;
+            juridico.checked =false;
+            computacao.checked =false;
+            engenharia.checked =false;
+            meio_ambiente.checked =false;
+            biologia.checked =false;
+            historia.checked =false;
+
+
+            curriculo.value =""; 
+        }
+    </script>
+</html>
